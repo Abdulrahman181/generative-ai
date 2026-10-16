@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Advisor — CareerPilot</title>
+  <meta name="description" content="Get personalized career advice powered by AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="index">06 / ADVISOR</span>
+      <span class="brand"><span class="brand__text">AI Resume Analyzer</span></span>
+      <nav class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="matching.html">Matching</a>
+        <button class="logout-btn" id="logout-btn">Log out</button>
+      </nav>
+    </header>
+
+  <main class="shell" style="max-width:900px;">
+
+    <h1 class="page-title" style="margin-bottom:.5rem;">Career Advisor</h1>
+    <p class="page-subtitle" style="color:var(--ink-soft);margin-bottom:1.5rem;">
+      Ask about your stored profile, uploaded resume evidence, available jobs, or supported career knowledge.
+    </p>
+
+    
+    <div class="advisor-controls" id="advisorControls">
+      <label class="field__label">Selected resume for grounded questions:</label>
+      <select id="resumeSelect" class="field__input" style="max-width:400px;">
+        <option value="">No resume selected</option>
+      </select>
+      <div id="selected-resume-status" class="meta">No resume selected; profile and stored job data remain available.</div>
+      <label class="field__label" for="jobSelect" style="margin-top:12px;">Selected job for role-specific questions:</label>
+      <select id="jobSelect" class="field__input" style="max-width:400px;">
+        <option value="">No job selected</option>
+      </select>
+      <div id="selected-job-status" class="meta">No job selected; job-specific context is disabled.</div>
+      <button class="btn btn--small btn--outline" id="clearHistoryBtn" title="Clear chat history">
+        Clear History
+      </button>
+    </div>
+
+    
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg chat-msg--assistant">
+          <div class="chat-msg__avatar">AI</div>
+          <div class="chat-msg__bubble">
+            <p>Career AI can use your stored profile, selected resume evidence, available job requirements, and the existing career knowledge base.</p>
+            <p>Questions outside that scope are declined. Select a resume when your question depends on a specific resume.</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <form class="chat-input" id="chatForm">
+        <input type="text" id="chatInput" class="field__input"
+          placeholder="Ask about your stored profile, resume, jobs, or career knowledge..." autocomplete="off" required />
+        <button type="submit" class="btn btn--primary" id="sendBtn">
+          Send
+        </button>
+      </form>
+    </div>
+
+  </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/advisor.js?v=2"></script>
+</body>
+
+</html>

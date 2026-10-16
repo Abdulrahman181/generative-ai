@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — CareerPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="index">01 / AUTH</span>
+      <span class="brand"><span class="brand__text">AI Resume Analyzer</span></span>
+    </header>
+
+    <main class="auth-shell">
+      <div class="auth-card">
+        <p class="eyebrow">Create account</p>
+        <h1>Get started</h1>
+        <p class="sub">Register to upload resumes and get matched to jobs.</p>
+
+        <div id="message" class="message"></div>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="full_name">Full name</label>
+            <input type="text" id="full_name" name="full_name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" required />
+            <p class="hint">At least 8 characters, with a letter and a number.</p>
+          </div>
+          <button type="submit" class="primary" id="submit-btn">Create account</button>
+        </form>
+
+        <p class="switch-link">Already have an account? <a href="login.html">Log in</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+
+</html>

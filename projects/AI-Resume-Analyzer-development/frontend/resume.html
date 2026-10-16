@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Analysis — CareerPilot</title>
+  <meta name="description" content="View your AI-analyzed resume with skills, education, experience, and summary." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="index">03 / RESUME ANALYSIS</span>
+      <span class="brand"><span class="brand__text">AI Resume Analyzer</span></span>
+      <a href="dashboard.html" class="back-link">← Dashboard</a>
+    </header>
+
+    <main class="analysis-page">
+      <div id="loading" class="loading-state">
+        <div class="spinner large"></div>
+        <p>Loading analysis…</p>
+      </div>
+
+      <div id="analysis-content" style="display:none;">
+        
+        <div class="analysis-header">
+          <h1 id="resume-filename">Resume</h1>
+          <p class="meta" id="resume-meta"></p>
+        </div>
+
+        <section class="score-panel">
+          <div>
+            <div class="section-label">CV SCORE</div>
+            <div id="resume-score" class="score-display">0%</div>
+          </div>
+          <div id="analysis-message" class="message"></div>
+        </section>
+
+        <div class="analysis-toolbar">
+          <button class="primary" id="analyze-btn">Analyze CV</button>
+          <button class="toggle-btn" id="improve-btn">Improvement Recommendations</button>
+          <label class="action-hint" for="improve-job-select">Target job (optional)
+            <select id="improve-job-select" aria-label="Optional target job for improvement recommendations">
+              <option value="">General CV improvements</option>
+            </select>
+          </label>
+          <span class="action-hint" id="improve-status" role="status">General CV recommendations are available after analysis; target-job matching is optional.</span>
+          <a class="toggle-btn" id="matching-btn" href="#">Matching</a>
+        </div>
+
+        
+        <section class="analysis-section summary-section">
+          <div class="section-label">PROFILE AND CONTACT</div>
+          <p id="resume-full-name" class="entry-title">Name not available</p>
+          <p id="resume-contact" class="meta">Contact information not available</p>
+          <div class="section-label" style="margin-top:16px;">SUMMARY</div>
+          <p id="resume-summary" class="summary-text"></p>
+        </section>
+
+        
+        <section class="analysis-section">
+          <div class="section-label">TECHNICAL SKILLS</div>
+          <div id="tech-skills" class="skill-tags"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">SOFT SKILLS</div>
+          <div id="soft-skills" class="skill-tags soft"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">CATEGORIZED SKILLS</div>
+          <div id="categorized-skills" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">EDUCATION</div>
+          <div id="education-list" class="entries-list"></div>
+        </section>
+
+        
+        <section class="analysis-section">
+          <div class="section-label">EXPERIENCE</div>
+          <div id="experience-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">PROJECTS</div>
+          <div id="projects-list" class="entries-list"></div>
+        </section>
+
+        
+        <section class="analysis-section">
+          <div class="section-label">STRENGTHS</div>
+          <div id="strengths-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">AREAS TO IMPROVE</div>
+          <div id="weaknesses-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">IMPROVEMENT RECOMMENDATIONS</div>
+          <div id="recommendations-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">HIGH-PRIORITY FIXES</div>
+          <div id="high-priority-fixes-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">IMPACT &amp; METRICS</div>
+          <div id="impact-metrics-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">SKILLS &amp; ATS KEYWORD OPTIMIZATION</div>
+          <div id="skills-ats-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">PROFESSIONAL SUMMARY POLISH</div>
+          <div id="summary-polish-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">CERTIFICATIONS</div>
+          <div id="certifications-list" class="skill-tags"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">TRAINING</div>
+          <div id="training-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">LANGUAGES</div>
+          <div id="languages-list" class="skill-tags"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">ACHIEVEMENTS</div>
+          <div id="achievements-list" class="entries-list"></div>
+        </section>
+
+        <section class="analysis-section">
+          <div class="section-label">LEARNING RESOURCES</div>
+          <div id="learning-resources-list" class="entries-list"></div>
+        </section>
+
+        
+        <section class="analysis-section">
+          <button class="toggle-btn" id="toggle-raw">Show extracted text</button>
+          <pre id="raw-text" class="raw-text" style="display:none;"></pre>
+        </section>
+
+        
+        <div class="analysis-actions">
+          <a href="dashboard.html" class="primary" style="text-decoration:none;text-align:center;">Upload another
+            resume</a>
+          <button class="danger-btn" id="delete-btn">Delete this resume</button>
+        </div>
+      </div>
+
+      <div id="error-state" class="error-state" style="display:none;">
+        <h2>Something went wrong</h2>
+        <p id="error-message"></p>
+        <a href="dashboard.html" class="primary"
+          style="text-decoration:none;text-align:center;display:inline-block;margin-top:16px;">Back to dashboard</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/resume.js?v=5"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+__pycache__/
+.env
+.cache/
+*.pyc
+.DS_Store
+
+# HuggingFace cache
+~/.cache/huggingface/
+.cache/huggingface/
+
+# Streamlit
+.streamlit/
+
+# Local source data and generated vector indexes. The checked-in Chroma
+# artifact is intentionally retained; new/rebuilt indexes should stay local.
+data/
+*.pdf
+*.sqlite3
+chroma_hr_db/*
+!chroma_hr_db/chroma.sqlite3
+!chroma_hr_db/*/
+!chroma_hr_db/*/*.bin
+
+# Test and build artifacts
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# OS
+Thumbs.db

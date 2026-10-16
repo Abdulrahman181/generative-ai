@@ -1,0 +1,10 @@
+faiss_index/
+faiss_index_*/
+models/
+*.gguf
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.py[cod]
+data/
+.env

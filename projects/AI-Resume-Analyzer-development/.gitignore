@@ -1,0 +1,25 @@
+# Virtual environments
+.venv/
+venv/
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Environment / secrets
+.env
+.env.*
+!.env.example
+# Local database
+*resume_analyzer.db*
+# Runtime caches and logs
+*.log
+app/rag/data/embeddings_cache.pkl
+.pytest_cache/
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
+# VS Code
+.vscode/
+# Jupyter
+.ipynb_checkpoints/

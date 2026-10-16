@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Matching — CareerPilot</title>
+  <meta name="description" content="Match your resume against jobs and see ranked recommendations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="index">05 / MATCHING</span>
+      <span class="brand"><span class="brand__text">AI Resume Analyzer</span></span>
+      <nav class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="jobs.html">Jobs</a>
+        <button class="logout-btn" id="logout-btn">Log out</button>
+      </nav>
+    </header>
+
+    <main class="matching-page">
+      <h1>Job Matching</h1>
+      <p class="page-subtitle">Select a resume to compare against all available jobs and get AI-powered recommendations.
+      </p>
+
+      <div id="match-message" class="message"></div>
+
+      
+      <section class="select-section">
+        <div class="section-label">SELECT RESUME</div>
+        <div id="resume-selector" class="resume-selector" data-state="loading" aria-busy="true">
+          <p class="empty-state">Loading resumes…</p>
+        </div>
+        <p id="selected-resume-status" class="meta" role="status">No resume selected. Select one before running matching.</p>
+      </section>
+
+      
+              <div class="match-action" id="match-action" data-state="hidden" style="display:none;">
+
+        <button class="primary match-btn" id="match-btn">
+          <span class="btn-text">Run Job Matching</span>
+          <span class="spinner" style="display:none;"></span>
+        </button>
+        <p class="match-hint">This will compare your resume against all available job postings.</p>
+      </div>
+
+      
+      <section id="results-section" data-state="hidden" aria-live="polite" style="display:none;">
+        <div class="section-label">RECOMMENDED JOBS</div>
+        <p class="results-summary" id="results-summary"></p>
+        <div id="match-results" class="match-results"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/matching.js?v=3"></script>
+</body>
+
+</html>

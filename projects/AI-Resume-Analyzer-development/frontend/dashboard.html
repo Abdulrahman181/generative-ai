@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — CareerPilot</title>
+  <meta name="description" content="Upload and analyze your resume with AI-powered insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="index">02 / DASHBOARD</span>
+      <span class="brand"><span class="brand__text">AI Resume Analyzer</span></span>
+      <nav class="nav-links">
+        <a href="jobs.html">Jobs</a>
+        <a href="matching.html">Matching</a>
+        <a href="advisor.html">Advisor</a>
+        <button class="logout-btn" id="logout-btn">Log out</button>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <h1>Welcome, <span id="user-name">—</span></h1>
+      <p class="meta" id="user-email">—</p>
+
+      <div class="panel upload-panel">
+        <div class="panel-header">
+          <h2>Upload Resume</h2>
+        </div>
+        <p>Upload your resume in <strong>PDF</strong> or <strong>DOCX</strong> format for AI-powered analysis.</p>
+
+        <div id="upload-message" class="message"></div>
+
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="upload-zone" id="upload-zone">
+            <div class="upload-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+            </div>
+            <p class="upload-label">Drag & drop your resume here</p>
+            <p class="upload-hint">or click to browse — PDF, DOCX up to 5 MB</p>
+            <input type="file" id="resume-file" name="file" accept=".pdf,.docx" hidden />
+          </div>
+
+          <div id="file-preview" class="file-preview" style="display:none;">
+            <span class="file-icon">File</span>
+            <span id="file-name" class="file-name"></span>
+            <button type="button" id="clear-file" class="clear-file" title="Remove file">Remove</button>
+          </div>
+
+          <button type="submit" class="primary" id="upload-btn" disabled>
+            <span class="btn-text">Analyze Resume</span>
+            <span class="spinner" style="display:none;"></span>
+          </button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>My Resumes</h2>
+          <span class="resume-count" id="resume-count">0</span>
+        </div>
+        <div id="resumes-list" class="resumes-list">
+          <p class="empty-state" id="empty-state">No resumes uploaded yet. Upload one above to get started!</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Jobs & Matching</h2>
+        </div>
+        <p>Browse job postings, search by skill or location, and match your resume against available positions.</p>
+        <div style="display:flex;gap:10px;margin-top:14px;">
+          <a href="jobs.html" class="primary" style="flex:1;text-decoration:none;text-align:center;">Browse Jobs</a>
+          <a href="matching.html" class="primary"
+            style="flex:1;text-decoration:none;text-align:center;background:var(--signal-dark);">Run Matching</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Career Advisor</h2>
+        </div>
+        <p>Use stored profile information, uploaded resume data, available jobs, and the existing career knowledge base for grounded career guidance.</p>
+        <div style="display:flex;gap:10px;margin-top:14px;">
+          <a href="advisor.html" class="primary" style="flex:1;text-decoration:none;text-align:center;">Open Career
+            Advisor</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js?v=4"></script>
+</body>
+
+</html>
