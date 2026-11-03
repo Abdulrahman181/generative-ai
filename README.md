@@ -5,8 +5,8 @@ RAG, LLM, and generative-AI applications.
 ## Projects
 
 - [`HR-Policy-Question-Answering-System-RAG`](./projects/HR-Policy-Question-Answering-System-RAG/) — migrated project; source repository archived and consolidated here
-- [`Smart-Document-Assistant`](./projects/Smart-Document-Assistant/) — [original repository](https://github.com/Abdulrahman181/Smart-Document-Assistant)
-- [`AI-Resume-Analyzer-development`](./projects/AI-Resume-Analyzer-development/) — [original repository](https://github.com/Abdulrahman181/AI-Resume-Analyzer-development)
+- [`Smart-Document-Assistant`](./projects/Smart-Document-Assistant/) — [original repository](./projects/Smart-Document-Assistant/)
+- [`AI-Resume-Analyzer-development`](./projects/AI-Resume-Analyzer-development/) — [original repository](./projects/AI-Resume-Analyzer-development/)
 
 ## Engineering standard
 
